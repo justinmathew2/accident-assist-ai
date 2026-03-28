@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccidentAssist AI - Report Incident</title>
+    <meta name="description" content="AI-powered emergency assistance for road accidents. Instant reporting and clinical triage.">
+    <!-- Premium Typography -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                ACCIDENT<span style="color: var(--secondary)">ASSIST</span> AI
+            </div>
+            <div class="user-action">
+                <div class="icon-container" style="width: 2.5rem; height: 2.5rem; background: var(--surface-container-low)">
+                    <span class="nav-icon">👤</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <h1 class="section-title">Emergency Support</h1>
+
+            <!-- SOS Button / Accessibility Audit Applied -->
+            <button class="btn-emergency" 
+                    id="btn-sos" 
+                    role="button" 
+                    aria-label="Call Emergency Services Immediately" 
+                    onclick="window.location.href='tel:108'">
+                <div class="emergency-icon">🚨</div>
+                <div class="btn-emergency-text">CALL SERVICES (108)</div>
+                <div class="btn-emergency-subtext">Instant Emergency Dispatch</div>
+            </button>
+
+            <h2 class="label-data" style="margin-bottom: 1rem;">Incident Reporting</h2>
+            <div class="action-grid">
+                <!-- Upload Card / Accessibility Audit Applied -->
+                <div class="action-card" 
+                     id="btn-upload" 
+                     role="button" 
+                     aria-label="Upload Photo of Accident Scene" 
+                     tabindex="0">
+                    <div class="icon-container">📷</div>
+                    <span>CAPTURE SCENE</span>
+                </div>
+
+                <!-- Record Card / Accessibility Audit Applied -->
+                <div class="action-card" 
+                     id="btn-record" 
+                     role="button" 
+                     aria-label="Record Voice Report of Situation" 
+                     tabindex="0">
+                    <div class="icon-container">🎙️</div>
+                    <span>EXPLAIN SCENE</span>
+                </div>
+            </div>
+
+            <!-- AI Clinical Guardian -->
+            <section class="ai-section">
+                <div class="ai-header">
+                    <div class="icon-container" style="background: var(--tertiary-container); color: white; width: 2.5rem; height: 2.5rem; font-size: 1rem;">
+                        🛡️
+                    </div>
+                    <div style="flex: 1">
+                        <div style="font-weight: 700; font-size: 0.9rem;">AI Clinical Guardian</div>
+                        <div class="label-data" style="font-size: 0.65rem;">Triage Protocol Alpha</div>
+                    </div>
+                    <span class="badge-status pulse">Waiting for Data</span>
+                </div>
+                <p class="ai-description">
+                    Our AI models are ready to analyze your inputs to determine incident severity and prioritize medical response. <strong>Upload images or speak to begin.</strong>
+                </p>
+            </section>
+
+            <!-- Live Location -->
+            <div class="action-card" style="flex-direction: row; justify-content: start; width: 100%; padding: 1rem 1.5rem; border: 1px solid var(--primary);">
+                <div class="icon-container" style="width: 2.5rem; height: 2.5rem; font-size: 1.25rem;">📍</div>
+                <div style="margin-left: 1rem; text-align: left;">
+                    <div class="label-data" style="font-size: 0.6rem;">Live GPS Pin</div>
+                    <div style="font-weight: 700; font-size: 0.85rem;">Bengaluru, KA - Outer Ring Rd</div>
+                </div>
+            </div>
+
+            <!-- Graphic Element per DesignMD -->
+            <div style="margin-top: 3rem; opacity: 0.1; display: flex; justify-content: center;">
+                <div style="width: 100px; height: 100px; border: 2px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 70px; height: 70px; border: 1px solid var(--primary); border-radius: 50%;"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" id="nav-report">
+                <span class="nav-icon">📋</span>
+                <span>Report</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-status">
+                <span class="nav-icon" id="status-nav">📡</span>
+                <span>Status</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-history">
+                <span class="nav-icon">🕒</span>
+                <span>History</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Hidden File Input for Capture Scene -->
+    <input type="file" id="file-input" style="display: none;" accept="image/*">
+
+    <!-- Example of url_for with images (assuming they exist in static/images) -->
+    <!-- <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Hero Image" style="display:none;"> -->
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Smooth interaction for cards
+        document.querySelectorAll('.action-card').forEach(card => {
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    card.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
