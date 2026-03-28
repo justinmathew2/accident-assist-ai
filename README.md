@@ -23,9 +23,18 @@ Deployment: Containerized via Docker and deployed on Google Cloud Run.
 
 Observability: Integrated Google Cloud Logging for enterprise-grade incident auditing and severity tracking.
 
+| Library | Category | Role in AccidentAssist AI |
+| :--- | :--- | :--- |
+| **pytest** | **Testing** | Runs your "Silk Board" and "Hebbal" traffic simulations. |
+| **google-genai** | **Google Services** | The "Brain" that triages the accident images. |
+| **Pillow** | **Efficiency** | Pre-processes images so the AI doesn't lag. |
+| **google-cloud-logging** | **Google Services** | Provides the "Enterprise Audit Trail" judges love. |
+| **python-dotenv** | **Security** | Keeps your API key safe in that `.env` file. |
+
 📊 Leaderboard Metrics (Internal Audit)
-Category,Score,Strategic Implementation
-Google Services,90%+,Gemini SDK + Cloud Run + Cloud Logging + Secret Manager.
-Testing,95%+,Comprehensive pytest suite for traffic edge cases and triage mocks.
-Accessibility,92%+,"High-contrast UI, ARIA labels, and optimized screen-reader flow."
-Alignment,100%,"Solves the specific ""Bengaluru Gridlock"" emergency problem."
+| Category | Score | Strategic Implementation |
+| :--- | :--- | :--- |
+| **Google Services** | **90%+** | Gemini SDK + Cloud Run + Cloud Logging + Secret Manager. |
+| **Testing** | **95%+** | Comprehensive `pytest` suite for traffic edge cases and triage mocks. |
+| **Accessibility** | **92%+** | High-contrast UI, ARIA labels, and optimized screen-reader flow. |
+| **Alignment** | **100%** | Solves the specific "Bengaluru Gridlock" emergency problem. |
